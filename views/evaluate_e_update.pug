@@ -1,0 +1,62 @@
+extends layout
+
+block content
+    h1.title_1 평가 입력 및 수정
+    // main 시작
+    div.main
+        //main_content navbar
+        div.main_nav
+            nav.navbar.navbar-light.bg-light
+            .container-fluid
+                a.main_a.navbar-brand(href='evaluate_e_insert') 직원 평가 정보 입력
+                a.main_a.navbar-brand(href='evaluate_e_update') 직원 평가 정보 수정
+                a.main_a.navbar-brand(href='evaluate_c_insert') 고객 평가 정보 입력
+                a.main_a.navbar-brand(href='evaluate_c_update') 고객 평가 정보 수정
+                a.main_a.navbar-brand(href='evaluate_p_insert') PM 평가 정보 입력
+                a.main_a.navbar-brand(href='evaluate_p_update') PM 평가 정보 수정
+        //main_content 
+        div.main_conent
+            h3.title_2 직원 평가 정보 수정
+            //검색창 시작
+            <form method="post"> 
+            .row.row-cols-lg-auto.g-3.align-items-center
+                .col-2
+                    label 프로젝트 번호
+                .col-2
+                    input#inlineFormSelectPref.form-control(type='text' placeholder='프로젝트번호')
+                .col-3
+                    button.btn.btn-primary(type='submit') 조회
+            table.table.test
+                tr
+                    th 업무수행 등급
+                    th 업무수행 평가내용
+                    th 의사소통 등급
+                    th 의사소통 평가내용
+                tbody#test2
+            script
+                include test2.js                           
+            .row-1 
+                label 업무수행 등급
+            .col-1-1
+                input(type='text', name='employee_duty_grade',placeholder='1~10')
+            .row-2 
+                label 업무수행 평가내용
+            .col-1-2
+                input(type='text', name='employee_duty_evl_content',placeholder='1000자 이내 입력')
+            .row-3 
+                label 의사소통 등급
+            .col-1-3
+                input(type='text', name='employee_cmnct_grade',placeholder='1~10')
+            .row-4 
+                label 의사소통 평가내용
+            .col-1-4
+                input(type='text', name='employee_cmnct_evl_content',placeholder='1000자 이내 입력') 
+            .row-6 
+                input(type="submit" value="수정")
+           
+    
+
+
+
+            
+
